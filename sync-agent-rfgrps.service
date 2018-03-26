@@ -1,0 +1,15 @@
+[Unit]
+Description=AMI PSME Fabric
+PartOf=sync-agent.service
+
+[Service]
+WorkingDirectory=/usr/local/sync-agent/
+Type=Forking
+ExecStart=/usr/bin/luajit subagents/redfish-2-redfishgroup.lua
+ExecStop=/bin/kill -9 /var/run/redfish2redfishgroup.pid
+Restart=always
+
+
+[Install]
+WantedBy=multiuser.target
+

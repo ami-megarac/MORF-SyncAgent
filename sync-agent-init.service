@@ -1,0 +1,12 @@
+[Unit]
+Description=AMI PSME Fabric
+PartOf=sync-agent.service
+
+[Service]
+WorkingDirectory=/usr/local/sync-agent/
+ExecStart=/usr/bin/luajit subagents/init-agent.lua
+Type=simple
+
+[Install]
+WantedBy=multiuser.target
+
