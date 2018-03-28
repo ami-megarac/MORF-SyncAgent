@@ -2,10 +2,8 @@
 
 PREFIX ?= /usr/local
 INSTALL_MODULE= $(PREFIX)/sync-agent
-INSTALL_BIN= $(PREFIX)/bin
-GIT_DIR= git
-APP_DIR= $(GIT_DIR)/app
-OUTPUT_DIR= output
+APP_DIR ?= app
+OUTPUT_DIR ?= output
 
 all: clean build
 
@@ -21,7 +19,6 @@ clean:
 uninstall:
 	@echo "==== Uninstalling sync agent. ===="
 	rm -rf $(INSTALL_MODULE)
-	rm -rf $(INSTALL_BIN)
 	@echo "==== sync agent uninstalled.===="
 
 install:
@@ -30,7 +27,6 @@ install:
 	install -d $(INSTALL_MODULE)/oem
 	install -d $(INSTALL_MODULE)/extensions
 	install -d $(INSTALL_MODULE)/extensions/ldbus
-	install -d $(INSTALL_BIN)
 
 	cp -R $(OUTPUT_DIR)/* $(INSTALL_MODULE)
 
