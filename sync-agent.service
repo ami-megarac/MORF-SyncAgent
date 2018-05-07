@@ -1,5 +1,5 @@
 [Unit]
-Description=AMI PSME Fabric
+Description=MORF Sync Agent
 Wants=sync-agent-init.service sync-agent-rfgrps.service sync-agent-rffns.service
 
 [Service]

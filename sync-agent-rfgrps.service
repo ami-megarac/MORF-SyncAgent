@@ -1,5 +1,5 @@
 [Unit]
-Description=AMI PSME Fabric
+Description=MORF Sync Agent
 PartOf=sync-agent.service
 
 [Service]
